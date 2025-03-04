@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->boolean('is_active')->default(true);
+            $table->softDeletes();
             // $table->timestamp('published_at')->nullable(); //sonradan eklenmesi için iyi bir özellik
             $table->timestamps();
         });
