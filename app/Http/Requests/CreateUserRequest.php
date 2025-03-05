@@ -27,4 +27,19 @@ class CreateUserRequest extends FormRequest
             'password'=>'required|min:3|max:255'
         ];
     }
+    public function message(){
+        return[
+            'name.required'=>"Ad Alanı Boş",
+            'name.string'=>"Ad Alanı String olmalı",
+            'name.min'=>"Minimum 3 karakter olmalı",
+            'name.max'=>"Maksimum 255 karaktrer olmalı",
+            'email.required'=>"Email yaz lale",
+            'email.email'=>"Email, email formatında olmalı xxx@bilmemne.com",
+            'email.unique'=>"Bu email mevcut",
+            'password.required'=>"Şifre alanını boş bırakma enayi",
+            'password.string'=>"Şifreyi klavyedeki tuşlara basarak gir amk",
+            'password.min'=>"Şifre minimum 6 karakterden oluşmalı sonra hesabı gaptırdım diye ağlama bana",
+            'password.max'=>"Tamam birader abartma amk pentagonda mı çalışıyosun.",
+        ];
+    }
 }
