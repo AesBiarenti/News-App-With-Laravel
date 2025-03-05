@@ -22,12 +22,13 @@ class CreateUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required|min:3|max:255',
+            'name'=>'required|string|min:3|max:255',
             'email'=>'required|email|unique:users',
-            'password'=>'required|min:3|max:255'
+            'password'=>'required|string|min:3|max:255'
         ];
     }
-    public function message(){
+    public function messages()
+    {
         return[
             'name.required'=>"Ad Alanı Boş",
             'name.string'=>"Ad Alanı String olmalı",
