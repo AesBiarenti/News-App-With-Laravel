@@ -11,13 +11,13 @@ class NewsImage extends Model
 
     protected $fillable = ['news_id', 'image_id'];
 
-    // public function news()
-    // {
-    //     return $this->belongsTo(News::class);
-    // }
+     public function news()
+     {
+         return $this->belongsTo(News::class);
+     }
 
-    // public function image()
-    // {
-    //     return $this->belongsTo(Image::class);
-    // }
+    public function image()
+    {
+        return $this->belongsTo(Image::class);
+    }
 }
