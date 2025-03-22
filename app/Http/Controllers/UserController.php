@@ -36,14 +36,21 @@ class UserController extends Controller
             'data'=>Auth::user(),
         ]);
     }
-    public function logout(LoginUserRequest $request){
-        $user = Auth::attempt(['email'=>$request->email,'password'=>$request->password]);
+    public function get_user(){
+        $user = Auth::user();
         if (!$user) {
             return response()->json([
                 'status'=>false,
-                'message'=>'kullanıcı bulunamadı',
+                'message'=> 'Kullanıcı Bulunamadı'
             ]);
         }
+        return response()->json([
+            'status'=>true,
+            'message'=>"Kullanıcı Başarıyla Getirildi",
+            'data' =>$user
+        ]);
+    }
+    public function logout(LoginUserRequest $request){
         Auth::logout();
         return response()->json([
             'status'=>true,
